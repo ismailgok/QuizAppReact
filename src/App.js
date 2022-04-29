@@ -40,6 +40,24 @@ function App() {
             d: "1900",
             corretAnswer: "1914",
         },
+        {
+            id: 5,
+            question: "2. Dünya savaşı ne zaman başladı",
+            a: "1939",
+            b: "1920",
+            c: "1950",
+            d: "1945",
+            corretAnswer: "1939",
+        },
+        {
+            id: 6,
+            question: "2022 yılında Rusya kime saldırdı?",
+            a: "Polonya",
+            b: "Ukrayna",
+            c: "ABD",
+            d: "Çin",
+            corretAnswer: "Ukrayna",
+        },
     ];
 
     const [counter, setCounter] = useState(0);
