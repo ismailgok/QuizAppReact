@@ -84,7 +84,7 @@ function App() {
             {completed ? (
                 `
                Doğru cevap sayısı ${score}
-              `
+                `
             ) : (
                 <Quiz
                     quiz={quiz}
