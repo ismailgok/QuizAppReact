@@ -166,7 +166,7 @@ function App() {
 
     const onClickButton = (correct) => {
         const nextQuestion = currentQuestion + 1;
-        if (correct === true) {
+        if (correct) {
             setScore(score + 1);
         }
         if (nextQuestion < questions.length) {
