@@ -183,11 +183,6 @@ function App() {
                 <Question
                     questions={questions}
                     currentQuestion={currentQuestion}
-            {completed ? (
-                `Doğru cevap sayısı ${score}`
-            ) : (
-                <Quiz
-                    quiz={quiz}
                     onClickButton={onClickButton}
                 />
             ) : (
