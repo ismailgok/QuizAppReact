@@ -179,12 +179,10 @@ function App() {
 
     return (
         <div className="App">
-<<<<<<< HEAD
             {showQuestion ? (
                 <Question
                     questions={questions}
                     currentQuestion={currentQuestion}
-=======
             {completed ? (
                 `
                Doğru cevap sayısı ${score}
@@ -192,7 +190,6 @@ function App() {
             ) : (
                 <Quiz
                     quiz={quiz}
->>>>>>> 78134b87f04c9ddbde94371909595347d648bcde
                     onClickButton={onClickButton}
                 />
             ) : (
