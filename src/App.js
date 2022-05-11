@@ -165,8 +165,9 @@ function App() {
     const [score, setScore] = useState(0);
     const [findCorrect, setfindCorrect] = useState([]);
     const [correctShow, setCorrectShow] = useState(false);
+    const [showResponse, setShowResponse] = useState([]);
 
-    const onClickButton = (correct, answer) => {
+    const onClickButton = (correct, answer, data) => {
         const nextQuestion = currentQuestion + 1;
         if (correct) {
             setScore(score + 1);
@@ -182,6 +183,8 @@ function App() {
         } else {
             setShowQuestion(false);
         }
+        setShowResponse((showResponse) => [...showResponse, data]);
+        //setShowResponse((showResponse) => [...showResponse, questions[currentQuestion]]);
     };
 
     return (
@@ -210,6 +213,27 @@ function App() {
                         <div>
                             {findCorrect.map((item, index) => (
                                 <li key={index}>{item.answer}</li>
+                            ))}
+                            {showResponse.map((response, index) => (
+                                <div key={index} className="question">
+                                    <h2>{response.title}</h2>
+                                    {response.answers.map((item, index) => (
+                                        <button
+                                            key={index}
+                                            className={
+                                                findCorrect.find(
+                                                    (answer) =>
+                                                        answer.answer ===
+                                                        item.answer
+                                                )
+                                                    ? "success"
+                                                    : ""
+                                            }
+                                        >
+                                            {item.answer}
+                                        </button>
+                                    ))}
+                                </div>
                             ))}
                         </div>
                     )}
