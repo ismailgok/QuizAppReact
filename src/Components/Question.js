@@ -4,7 +4,16 @@ const Question = ({ questions, currentQuestion, onClickButton }) => {
             <span>Soru:{currentQuestion + 1}</span>
             <h2>{questions[currentQuestion].title}</h2>
             {questions[currentQuestion].answers.map((item, index) => (
-                <button key={index} onClick={() => onClickButton(item.correct,item.answer)}>
+                <button
+                    key={index}
+                    onClick={() =>
+                        onClickButton(
+                            item.correct,
+                            item.answer,
+                            questions[currentQuestion]
+                        )
+                    }
+                >
                     {item.answer}
                 </button>
             ))}
