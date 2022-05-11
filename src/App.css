@@ -3,3 +3,14 @@
   display:flex;
   flex-direction: column;
 }
+.question{
+  margin:0 auto;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  gap:5px;
+}
+.question > button {
+  width: 50%;
+}
