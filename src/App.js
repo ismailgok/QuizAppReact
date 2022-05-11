@@ -163,14 +163,21 @@ function App() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [showQuestion, setShowQuestion] = useState(true);
     const [score, setScore] = useState(0);
+    const [findCorrect, setfindCorrect] = useState([]);
+    const [correctShow, setCorrectShow] = useState(false);
 
-    const onClickButton = (correct) => {
+    const onClickButton = (correct, answer) => {
         const nextQuestion = currentQuestion + 1;
         if (correct) {
             setScore(score + 1);
+            setfindCorrect((findCorrect) => [
+                ...findCorrect,
+                questions[currentQuestion].answers.find(
+                    (item) => item.answer === answer
+                ),
+            ]);
         }
         if (nextQuestion < questions.length) {
-            console.log(nextQuestion, questions.length);
             setCurrentQuestion(nextQuestion);
         } else {
             setShowQuestion(false);
@@ -186,7 +193,28 @@ function App() {
                     onClickButton={onClickButton}
                 />
             ) : (
-                <div>Doğru cevap sayısı: {score}</div>
+                <div>
+                    Doğru cevap sayısı: {score}
+                    <br />
+                    Yanlış cevap sayısı: {questions.length - score}
+                    <br />
+                    <br />
+                    {(score && (
+                        <button onClick={() => setCorrectShow(true)}>
+                            Doğru cevapları göster
+                        </button>
+                    )) || <div></div>}
+                    <br />
+                    <br />
+                    {correctShow && (
+                        <div>
+                            {findCorrect.map((item, index) => (
+                                <li key={index}>{item.answer}</li>
+                            ))}
+                        </div>
+                    )}
+                    <br />
+                </div>
             )}
         </div>
     );
