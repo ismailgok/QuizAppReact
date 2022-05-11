@@ -14,3 +14,12 @@
 .question > button {
   width: 50%;
 }
+
+.question .success{
+  background-color:green;
+  color:#fff;
+}
+
+.question .danger{
+  color:red;
+}
