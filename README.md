@@ -10,4 +10,4 @@ In the project directory, you can run:
 ### `npm start`
 
 
-![](https://github.com/QuizAppReact/chrome_fhA8JsfxY5.gif)
+![](https://github.com/ismailgok/QuizAppReact/blob/main/public/chrome_fhA8JsfxY5.gif)
